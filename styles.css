@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'gameFont'; /*a name to be used later*/
+    src: url('fonts/PKMN RBYGSC.ttf'); /*URL to font*/
+}
+
+.container {
+    font-family: 'gameFont';
+}
+
+#masthead {
+    background-color: rgba(255, 0, 0, 0.5);
+    text-align: center;
+}
+
+#col0 {
+    background: rgba(109, 56, 56, 0.3);
+}
+
+#pokemonName {
+    background-color: rgba(255, 0, 0, 0.5);
+    text-align: center;
+    margin-top: 2%;
+    padding: 1%;
+    word-spacing: 10px;
+}
+
+#pokemonImage {
+    display: block;
+    height: 500px;
+    width: 500px;
+    margin-top: 14%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#stats {
+    margin-top: 5%;
+}
+
+#typeRow {
+    background-color: slategray;
+}
+
+#typeLabel {
+    margin-top: 10px;
+}
+
+#type1 {
+    word-spacing: 30px;
+    background-color: aqua;
+    width: 100px;
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+}
+
+#type2 {
+    word-spacing: 7px;
+    background-color: blue;
+    width: 100px;
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+}
+
+#numberRow {
+    background-color: slategray;
+}
+
+#pokemonNumber {
+    color: white;
+}
+
+.list-group{
+    max-height: 735px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+#col1 {
+    background: rgba(37, 146, 95, 0.3);
+    word-spacing: 3px;
+}

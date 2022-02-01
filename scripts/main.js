@@ -15,7 +15,7 @@ if (queryString.length == 0){
 
 
 
-fetch(url + "caterpie" + "/").then(res=>{
+fetch(url + "1" + "/").then(res=>{
     if (res.status === 200){
         // SUCCESS
         res.json().then(data=>{
@@ -24,6 +24,7 @@ fetch(url + "caterpie" + "/").then(res=>{
             selectedPokemon = pokemon["name"];
             selectedSprite = pokemon["sprites"]["front_default"];
             types = pokemon["types"];
+            pokeId = pokemon["id"];
 
             console.log(selectedPokemon);
             console.log(selectedSprite);
@@ -41,21 +42,22 @@ fetch(url + "caterpie" + "/").then(res=>{
             $(".typing").append('<p id="typeLabel"><b>Type</b></p>')
             $(".typing").append('</div>')
 
+
             for (i = 0; i < types.length; i++){
-                console.log(i);
+
                 if (i == 0){
-                    $(".typing").append('<div class="col-md-auto">');
-                    $(".typing").append('<p id="type1">' + types[i]["type"]["name"] + '</p>');
+                    $(".typing").append('<div class="col-md-auto firstType">');
+                    $(".firstType").append('<p id="type1">' + types[i]["type"]["name"] + '</p>');
                 } else {
                     console.log("brrrrrrrr")
-                    $(".typing").append('<div class="col">');
-                    $(".typing").append('<p id="type2">' + types[i]["type"]["name"] + '</p>');
+                    $(".typing").append('<div class="col secondType">');
+                    $(".secondType").append('<p id="type2">' + types[i]["type"]["name"] + '</p>');
                 }
-                
-                
+            
                 $(".typing").append('</div>');
 
             }
+
 
             $(".pokeNum").empty();
 

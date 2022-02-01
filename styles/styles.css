@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'gameFont'; /*a name to be used later*/
-    src: url('fonts/PKMN RBYGSC.ttf'); /*URL to font*/
+    font-family: 'gameFont';
+    src: url('../fonts/PKMN RBYGSC.ttf');
 }
 
 .container {
@@ -26,8 +26,8 @@
 
 #pokemonImage {
     display: block;
-    height: 500px;
-    width: 500px;
+    height: auto;
+    width: 80%;
     margin-top: 14%;
     margin-left: auto;
     margin-right: auto;
@@ -71,11 +71,20 @@
     color: white;
 }
 
-.list-group{
-    max-height: 735px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+#searchbar {
+    margin-top: 5px;
+}
+
+#pokemonList {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-height: 835px;
     -webkit-overflow-scrolling: touch;
+}
+
+#viewMoreRow {
+    margin: 10px;
+    max-width: max-content;
 }
 
 #col1 {

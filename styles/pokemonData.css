@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'gameFont';
+    src: url('../fonts/PKMN RBYGSC.ttf');
+}
+
+.container {
+    font-family: 'gameFont';
+}
+
+#masthead {
+    background-color: rgba(255, 0, 0, 0.5);
+    text-align: center;
+}
+
+#col0 {
+    background-color: rgba(255, 0, 0, 0.4);
+    max-width: 40%;
+}
+
+#pokemonIMG {
+    display: block;
+    height: auto;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+}
+
+#type1 {
+    background-color: aqua;
+    text-align: center;
+    color: white;
+}
+
+#type2 {
+    background-color: darkblue;
+    text-align: center;
+    color: white;
+}
+
+#col1 {
+    background-color: rgba(255, 0, 0, 0.35);
+}
+
+#move1 {
+    border-radius: 25px;
+    background: #abdbe3;
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 100px;
+  }
+
+#movePP {
+    text-align: right;
+    padding-right: 40px;
+}
+
+#movePOW {
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 40px;
+}
+
+#moveACC {
+    padding-top: 10px;
+    padding-right: 40px;
+}
+
+#moveName {
+    padding-top: 10px;
+    padding-right: 40px;
+    padding-left: 45%;
+}

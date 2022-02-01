@@ -69,23 +69,21 @@ fetch(url + "caterpie" + "/").then(res=>{
 })
 
 
-for (i = 1; i < amountPokemon; i++){
-
-    fetch(url + i.toString() + "/").then(res=>{
-        if (res.status === 200){
-            // SUCCESS
-            res.json().then(data=>{
-                pokemon = data;
-                $(".allPokes").append('<option value="' + pokemon["name"] + '">' + pokemon["name"] + '</option>');
-                //<option value="1">One</option>
-                //console.log(pokemon["name"]);
-            }).catch(err => console.log(err))
-        }
-        else{
-            alert("Could not connect online");
-        }
-    })
-}
+fetch("https://pokeapi.co/api/v2/pokemon?limit=898/").then(res=>{
+    if (res.status === 200){
+        // SUCCESS
+        res.json().then(data=>{
+            pokemon = data;
+            for (i = 0; i < amountPokemon; i++){
+                $(".allPokes").append('<option value="' + pokemon["results"][i]["name"] + '">' + pokemon["results"][i]["name"] + '</option>');
+            }
+            
+        }).catch(err => console.log(err))
+    }
+    else{
+        alert("Could not connect online");
+    }
+})
 
 function updatePokemon(){
 

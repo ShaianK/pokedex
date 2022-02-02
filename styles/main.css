@@ -82,6 +82,11 @@
     -webkit-overflow-scrolling: touch;
 }
 
+#list-group {
+    font-size: x-large;
+    text-transform: capitalize;
+}
+
 #viewMoreRow {
     margin: 10px;
     max-width: max-content;

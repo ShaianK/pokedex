@@ -82,7 +82,7 @@
     -webkit-overflow-scrolling: touch;
 }
 
-#list-group {
+#pokemons {
     font-size: x-large;
     text-transform: capitalize;
 }

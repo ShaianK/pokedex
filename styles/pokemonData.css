@@ -20,7 +20,7 @@
 #pokemonIMG {
     display: block;
     height: auto;
-    width: 80%;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 0px;
@@ -42,14 +42,24 @@
     background-color: rgba(255, 0, 0, 0.35);
 }
 
-#move1 {
+#moves {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    max-height: 550px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#move {
     border-radius: 25px;
     background: #abdbe3;
     padding-left: 25px;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-bottom: 10px;
     height: 100px;
-  }
+}
 
 #movePP {
     text-align: right;

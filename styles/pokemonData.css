@@ -51,7 +51,7 @@
     overflow-x: hidden;
 }
 
-#move {
+.move {
     border-radius: 25px;
     background: #abdbe3;
     padding-left: 25px;
@@ -61,23 +61,23 @@
     height: 100px;
 }
 
-#movePP {
+.movePP {
     text-align: right;
     padding-right: 40px;
 }
 
-#movePOW {
+.movePOW {
     text-align: right;
     padding-top: 10px;
     padding-right: 40px;
 }
 
-#moveACC {
+.moveACC {
     padding-top: 10px;
     padding-right: 40px;
 }
 
-#moveName {
+.moveName {
     padding-top: 10px;
     padding-right: 40px;
     padding-left: 45%;

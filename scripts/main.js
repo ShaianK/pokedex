@@ -13,9 +13,15 @@ if (queryString.length == 0){
     pokemonName = queryString.substring(6); 
 }
 
-document.getElementById("searchForPokemon").addEventListener("input", function () {
+$("#searchForPokemon :input").change(function() {
+    console.log("bang");
+ });
+
+ document.getElementById("searchForPokemon").addEventListener("input", function () {
      createPokemon();
-});
+ });
+ 
+
 
 fetch(url + "1" + "/").then(res=>{
     if (res.status === 200){
@@ -72,7 +78,6 @@ fetch(url + "1" + "/").then(res=>{
     }
 })
 
-
 function createPokemon(){
     fetch("https://pokeapi.co/api/v2/pokemon?limit=898/").then(res=>{
     if (res.status === 200){
@@ -98,7 +103,6 @@ function createPokemon(){
 }
 
 createPokemon();
-
 function updatePokemon(){
 
     value = $('.allPokes').val();
@@ -162,6 +166,8 @@ function updatePokemon(){
         }
     })
 }
+
+
 
 $(".moreButton").click(function () {
     window.location.href = "ShowPokemon.html" + "?name=" + $('.allPokes').val();

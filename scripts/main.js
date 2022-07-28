@@ -13,7 +13,9 @@ if (queryString.length == 0){
     pokemonName = queryString.substring(6); 
 }
 
-
+document.getElementById("searchForPokemon").addEventListener("input", function () {
+     createPokemon();
+});
 
 fetch(url + "1" + "/").then(res=>{
     if (res.status === 200){
@@ -71,13 +73,20 @@ fetch(url + "1" + "/").then(res=>{
 })
 
 
-fetch("https://pokeapi.co/api/v2/pokemon?limit=898/").then(res=>{
+function createPokemon(){
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=898/").then(res=>{
     if (res.status === 200){
         // SUCCESS
         res.json().then(data=>{
             pokemon = data;
+            var inputVal = document.getElementById("searchForPokemon").value;
+            console.log(inputVal);
+            $(".allPokes").empty();
             for (i = 0; i < amountPokemon; i++){
-                $(".allPokes").append('<option value="' + pokemon["results"][i]["name"] + '">' + pokemon["results"][i]["name"] + '</option>');
+                if (pokemon["results"][i]["name"].substring(0, inputVal.length) == inputVal || !inputVal){
+                    $(".allPokes").append('<option value="' + pokemon["results"][i]["name"] + '">' + pokemon["results"][i]["name"] + '</option>');
+                }
+                
             }
             
         }).catch(err => console.log(err))
@@ -85,7 +94,10 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=898/").then(res=>{
     else{
         alert("Could not connect online");
     }
-})
+    })
+}
+
+createPokemon();
 
 function updatePokemon(){
 

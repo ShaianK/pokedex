@@ -143,11 +143,11 @@ function updatePokemon(){
 
                     if (i == 0){
                         $(".typing").append('<div class="col-md-auto firstType">');
-                        $(".firstType").append('<p id="type1">' + types[i]["type"]["name"] + '</p>');
+                        $(".firstType").append('<p id="type1" class=move_' + types[i]["type"]["name"] + '>' + types[i]["type"]["name"] + '</p>');
                     } else {
                         console.log("brrrrrrrr")
                         $(".typing").append('<div class="col secondType">');
-                        $(".secondType").append('<p id="type2">' + types[i]["type"]["name"] + '</p>');
+                        $(".secondType").append('<p id="type2" class=move_' + types[i]["type"]["name"] + '>' + types[i]["type"]["name"] + '</p>');
                     }
                 
                     $(".typing").append('</div>');

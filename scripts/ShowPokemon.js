@@ -51,7 +51,7 @@ fetch(url + pokemonName + "/").then(res=>{
                             console.log(move["name"])
 
                             var move_div = `
-                            <div class="move ${move["type"]["name"]}">
+                            <div class="move move_${move["type"]["name"]}">
                                 <div class="row">
                                     <div class="col moveType">
                                         type: ${move["type"]["name"]}

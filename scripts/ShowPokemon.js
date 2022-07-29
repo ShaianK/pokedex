@@ -1,5 +1,6 @@
 var queryString = decodeURIComponent(window.location.search); //parsing 
 pokemonName = queryString.substring(6); 
+document.querySelector('title').textContent = pokemonName[0].toUpperCase() + pokemonName.substring(1, pokemonName.length);
 
 const url = "https://pokeapi.co/api/v2/pokemon/";
 
@@ -129,5 +130,3 @@ fetch(url + pokemonName + "/").then(res=>{
         alert("Could not connect online");
     }
 })
-
-

@@ -170,5 +170,11 @@ function updatePokemon(){
 
 
 $(".moreButton").click(function () {
-    window.location.href = "ShowPokemon.html" + "?name=" + $('.allPokes').val();
+    if($('.allPokes').val()){
+        console.log("pow")
+        window.location.href = "ShowPokemon.html" + "?name=" + $('.allPokes').val();
+    } else {
+        console.log("bang")
+        window.location.href = "ShowPokemon.html" + "?name=" + "bulbasaur";
+    }
 });

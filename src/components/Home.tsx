@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div id="container" className="h-screen bg-gray-900">
-        <div className="flex justify-center items-center flex-col pt-60 min-w-[400px] w-full">
-          <h1 className='text-9xl text-neutral-100 uppercase tracking-tight pb-5'>POKEDEX</h1>
-          <div className="w-[450px]">
+    <div id="container" className="h-screen bg-gray-900 flex flex-col justify-center items-center">
+        <div className="flex flex-col items-center">
+          <h1 className='text-4xl md:text-9xl text-neutral-100 uppercase tracking-tight pb-5'>POKEDEX</h1>
+          <div className="w-full md:w-[450px]">
             <SearchBar/>
             <SearchResult/>
           </div>
         </div>
-        <Link className="text-white" to="/pokemon">Display Pokemon</Link>
+        <Link className="text-white mt-5" to="/pokemon">Display Pokemon</Link>
     </div>
   );
 }

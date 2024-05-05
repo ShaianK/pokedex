@@ -26,8 +26,8 @@ export default function Pokemon() {
     return (
         <div className="bg-gray-900 items-center h-screen">
             <Navbar />
-            <div className="flex flex-col-2 gap-1">
-                <div className="flex-none grid flex-row-3 bg-green-500 w-1/3 ">
+            <div className="flex flex-col-2 h-screen">
+                <div className="flex-none grid flex-row-3 bg-green-500 w-1/3 h-full">
                     <div>
                         <img className="h-full w-full object-cover" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"/>
                     </div>
@@ -56,7 +56,7 @@ export default function Pokemon() {
 
 
                 </div> 
-                <div className="flex-1 bg-red-500">
+                <div className="flex-1 bg-red-500 h-full">
                     <h1 className="text-9xl text-neutral-100 uppercase tracking-tight pb-5">y</h1>
                 </div>
             </div>

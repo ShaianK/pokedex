@@ -1,12 +1,13 @@
 import Navbar from "./Navbar";
 import { motion } from "framer-motion";
+import Move from "./Move";
 
 export default function Pokemon() {
     
     const StatsBar = ({ statName, statValue }: { statName: string, statValue: number }) => {
         return (
-          <div className="flex items-center mb-2">
-            <span className="font-semibold w-24">{statName}:</span> 
+          <div className="flex items-center mb-1">
+            <span className="font-semibold w-16">{statName}:</span> 
             <div className="flex items-center flex-1 ml-2">
               <div className="w-full h-3 bg-gray-300 rounded-lg">
                 <motion.div
@@ -16,7 +17,7 @@ export default function Pokemon() {
                   transition={{ duration: 1 }}
                 />
               </div>
-              <span className="ml-2">{statValue}</span>
+              <span className="ml-2 mr-1">{statValue}</span>
             </div>
           </div>
         );
@@ -26,8 +27,8 @@ export default function Pokemon() {
     return (
         <div className="bg-gray-900 items-center h-screen">
             <Navbar />
-            <div className="flex flex-col-2 h-screen">
-                <div className="flex-none grid flex-row-3 bg-green-500 w-1/3 h-full">
+            <div className="flex flex-col-2 gap-1 h-screen">
+                <div className="flex-none grid flex-row-3 bg-green-500 w-1/3 min-w-1/3 h-full">
                     <div>
                         <img className="h-full w-full object-cover" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"/>
                     </div>
@@ -36,7 +37,7 @@ export default function Pokemon() {
                             <h1 className="text-base sm:text-2lg md:text-2xl lg:text-3xl xl:text-4xl text-neutral-100 uppercase tracking-tight">PIKACHU</h1> 
                             <h1 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-xl text-neutral-100 uppercase tracking-tight">#025</h1> 
                         </div>
-                        <div className="bg-red-500 flex grid-col-2 justify-between items-center">
+                        <div className="bg-purple-500 flex grid-col-2 justify-between items-center">
                             <h1 className="bg-gray-500 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl text-neutral-100 uppercase tracking-tight mx-1">Psychic</h1> 
                             <h1 className="bg-gray-500 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl text-neutral-100 uppercase tracking-tight mx-1">Psychic</h1>
                         </div>
@@ -57,7 +58,28 @@ export default function Pokemon() {
 
                 </div> 
                 <div className="flex-1 bg-red-500 h-full">
-                    <h1 className="text-9xl text-neutral-100 uppercase tracking-tight pb-5">y</h1>
+                    <div className="h-full w-96 bg-slate-600 flex flex-col shadow-lg 
+                            overflow-y-scroll px-1 scrollbar-thin scrollbar-thumb-gray-700
+                             scrollbar-track-gray-900 scrollbar-thumb-rounded-full">
+                        <h2 className="flex justify-center text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl text-neutral-100 uppercase tracking-tight">Moves</h2>
+                        <ul>
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                            <Move />
+                        </ul>
+                    </div>
                 </div>
             </div>
             

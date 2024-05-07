@@ -15,13 +15,14 @@ export const getMoveData = async (move) => {
   try {
     const response = await axios.get(`https://pokeapi.co/api/v2/move/${move}`);
     const moveData = [
-      response.data.accuracy,
-      response.data.power,
-      response.data.pp
+      response.data.accuracy !== null ? response.data.accuracy : "N/A",
+      response.data.power !== null ? response.data.power : "N/A",
+      response.data.pp !== null ? response.data.pp : "N/A",
+      response.data.type.name !== null ? response.data.type.name : "N/A"
     ];
     return moveData;
   } catch (error) {
     console.error(error);
-    return [null, null, null]; // Return null values if there's an error
+    return ["N/A", "N/A", "N/A", "N/A"]; // Return "N/A" values if there's an error
   }
 };

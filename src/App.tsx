@@ -10,7 +10,7 @@ export default function App() {
     <div>
       <Routes location={location} key={location.pathname}>
         <Route index element={<Home />} />
-        <Route path="/Pokemon" element={<Pokemon />} />
+        <Route path="/pokemon/:pokemonId" element={<Pokemon />} />
       </Routes>
     </div>
   );

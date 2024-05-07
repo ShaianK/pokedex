@@ -114,14 +114,13 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
         <h3 className="text-lg font-semibold">Moves:</h3>
 
         <div className="grid grid-cols-1 gap-4">
-          {pokemonData.moves.map((move, index) => {
+          {pokemonData.moves.map((move: { move: { name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }; }, index: React.Key | null | undefined) => {
             let moveName = move.move.name;
-            let moveData = [null, null, null];
-            getMoveData(moveName).then (data => {
+            let moveData: [string | null, number | null, number | null] = [null, null, null];
+            getMoveData(moveName).then ((data: any[]) => {
               moveData[0] = data[0];
               moveData[1] = data[1];
               moveData[2] = data[2];
-              console.log(moveName[0]);
               console.log(data[0]);
             });
             

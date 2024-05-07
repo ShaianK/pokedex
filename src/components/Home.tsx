@@ -13,6 +13,7 @@ export default function Home() {
           </div>
         </div>
         <Link className="text-white mt-5" to="/pokemon">Display Pokemon</Link>
+        
     </div>
   );
 }

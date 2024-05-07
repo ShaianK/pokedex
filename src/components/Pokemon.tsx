@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from "./Navbar";
 import PokemonData from "./pokemonDataDisplay";
 import { useParams } from 'react-router-dom';

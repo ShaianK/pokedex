@@ -18,8 +18,6 @@ export default function SearchBar() {
     }
   };
 
-  let id = 1;
-
   return (
     <>
     <div className="bg-slate-600 w-full rounded-lg h-[12] p-4 shadow-large flex items-center">

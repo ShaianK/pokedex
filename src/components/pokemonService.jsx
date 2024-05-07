@@ -13,11 +13,15 @@ export const getEvolutionChain = async (speciesUrl) => {
 
 export const getMoveData = async (move) => {
   try {
-
     const response = await axios.get(`https://pokeapi.co/api/v2/move/${move}`);
-    let moveArr = [response.data.name, response.data.accuracy, response.data.power, response.data.pp, response.data.type.name]
-    return moveArr
+    const moveData = [
+      response.data.accuracy,
+      response.data.power,
+      response.data.pp
+    ];
+    return moveData;
   } catch (error) {
-      console.error(error);
+    console.error(error);
+    return [null, null, null]; // Return null values if there's an error
   }
 };

@@ -57,6 +57,8 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
     return evolutions;
   };
 
+  
+
   return (
     <div className="bg-gray-200 p-4 rounded-lg shadow-md h-screen grid grid-cols-2 gap-4">
       <div className="flex flex-col items-center justify-center">
@@ -112,26 +114,39 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
         <h3 className="text-lg font-semibold">Moves:</h3>
 
         <div className="grid grid-cols-1 gap-4">
-          {pokemonData.moves.map((move: { move: { name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }; }, index: React.Key | null | undefined) => (
-            <div key={index} className="bg-white p-4 flex rounded-lg shadow-md justify-between">
-              <p className="text-lg font-semibold">{move.move.name} </p>
+          {pokemonData.moves.map((move, index) => {
+            let moveName = move.move.name;
+            let moveData = [null, null, null];
+            getMoveData(moveName).then (data => {
+              moveData[0] = data[0];
+              moveData[1] = data[1];
+              moveData[2] = data[2];
+              console.log(moveName[0]);
+              console.log(data[0]);
+            });
+            
+            return (
+              <div key={index} className="bg-white p-4 flex rounded-lg shadow-md justify-between">
+                <p className="text-lg font-semibold">{move.move.name}</p>
 
-              <div className='flex'>
-                <p className="hidden lg:block text-lg font-semibold mx-4">ACC: XX POW: XX PP: XX</p>
-                <div className="flex">
+                <div className='flex'>
+                 
+                  <p className="hidden lg:block text-lg font-semibold mx-4">ACC: {moveName} POW: {moveData[1]} PP: {moveData[2]}</p>
+                  <div className="flex">
                     {pokemonData.types.map((type: { type: { name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }; }, index: React.Key | null | undefined) => (
-                    <div
+                      <div
                         key={index}
                         className={`mr-2 px-2 py-1 text-white rounded ${getTypeColor(type.type.name)}`}>
                         {type.type.name}
-                    </div>
-                ))}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-
-            </div>
-          ))}
+            );
+          })}
         </div>
+
 
       </div>
 

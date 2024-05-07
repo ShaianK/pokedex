@@ -5,7 +5,7 @@ export default function Pokemon() {
     return (
         <div>
             <Navbar />
-            <PokemonData pokemonName="bibarel" />
+            <PokemonData pokemonName="magikarp" />
         </div>
     )
 }

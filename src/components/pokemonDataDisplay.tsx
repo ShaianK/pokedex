@@ -40,7 +40,7 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
   }, [pokemonName]);
 
   if (!pokemonData || !evolutionChain) {
-    return <div>Loading...</div>;
+    return <div className='flex h-full justify-center items-center'>Loading...</div>;
   }
 
   const getEvolutions = (chain: any) => {

@@ -14,7 +14,7 @@ export default function SearchBar() {
 
   const handleKeyDown = (e : any) => {
     if (e.key === 'Enter') {
-      navigate(`/pokemon/${myValue}`);
+      navigate(`/pokemon/${myValue.replace(/\s+/g, '')}`);
     }
   };
 
@@ -36,10 +36,10 @@ export default function SearchBar() {
     </div>
     
     <div className="w-full bg-slate-600 flex flex-col shadow-lg rounded-lg 
-                        mt-4 h-[250px] overflow-y-scroll px-1 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900 
+                        mt-4 h-[250px] overflow-y-scroll px-1 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-700 
                         scrollbar-thumb-rounded-full">
         {names.filter(pokemon => pokemon.toLowerCase().includes(myValue.toLowerCase())).map((pokemon, index) => (
-            <li className="flex items-center justify-between py-2 hover:bg-slate-700 rounded-lg" key={index}>
+            <li onClick={() => navigate(`/pokemon/${pokemon.toLowerCase()}`)} className="flex cursor-pointer items-center justify-between py-2 hover:bg-slate-700 rounded-lg" key={index}>
             <img
                 className="w-12"
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png`}

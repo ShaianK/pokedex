@@ -1,5 +1,5 @@
 import {Routes, Route, useLocation} from 'react-router-dom';
-import Home from './components/Home';
+import Home from './pages/Home';
 import Pokemon from './components/Pokemon';
 import './index.css';
 

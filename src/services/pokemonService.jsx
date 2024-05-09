@@ -26,3 +26,9 @@ export const getMoveData = async (move) => {
     return ["N/A", "N/A", "N/A", "N/A"]; // Return "N/A" values if there's an error
   }
 };
+
+export const fetchPokemonData = async (pokemonName) => {
+  const data = await getPokemonData(pokemonName);
+  const evolutionChainData = await getEvolutionChain(data.species.url);
+  return { pokemonData: data, evolutionChain: evolutionChainData };
+};

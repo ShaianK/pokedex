@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import PokemonData from "./pokemonDataDisplay";
+import PokemonData from "../pages/pokemonDataDisplay";
 import { useParams } from 'react-router-dom';
 
 export default function Pokemon() {

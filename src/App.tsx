@@ -1,6 +1,6 @@
 import {Routes, Route, useLocation} from 'react-router-dom';
 import Home from './pages/Home';
-import Pokemon from './components/Pokemon';
+import Pokemon from './pages/Pokemon';
 import './index.css';
 
 export default function App() {

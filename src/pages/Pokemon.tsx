@@ -1,11 +1,9 @@
-import Navbar from "./Navbar";
-import PokemonData from "../pages/pokemonDataDisplay";
+import PokemonData from "../components/pokemonDataDisplay";
 import { useParams } from 'react-router-dom';
+import Navbar from "../components/Navbar";
 
 export default function Pokemon() {
-    //pokemonName = 'charizard'
     const { pokemonId } = useParams();
-    console.log("POKEMON NAME RECIVED IS" + pokemonId)
     
     return (
         <div>

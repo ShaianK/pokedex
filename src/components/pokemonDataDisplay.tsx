@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 // @ts-ignore
-import { getPokemonData, getEvolutionChain, getMoveData, fetchPokemonData } from '../services/pokemonService'; 
-import MoveComponent from '../components/MoveComponent';
+import { getPokemonData, getEvolutionChain, getMoveData, fetchPokemonData } from '../api/pokemonService'; 
+import MoveComponent from './MoveComponent';
 import getTypeColor from '../utils/typeColors';
-import StatsBar from '../components/StatsBar';
+import StatsBar from './StatsBar';
 import { getEvolutions } from '../utils/evolutionUtils';
 
 const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
@@ -25,7 +25,7 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
   }
 
   return (
-    <div className="bg-gray-200 p-4 rounded-lg shadow-md h-screen grid grid-cols-2 gap-4">
+    <div className="p-4 h-screen grid grid-cols-2 gap-4">
       <div className="flex flex-col items-center justify-center">
         <img
           className="w-64 h-64 object-contain"
@@ -33,10 +33,11 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
           alt={(pokemonData as any).name}
         />
         {pokemonData && <h2 className="text-xl font-semibold">{pokemonData.name}</h2>}
+
         <div className="flex mt-2">
-          <span className="text-gray-700 mr-4">ID: {(pokemonData as any).id}</span>
+          <span className="mr-4">ID: {(pokemonData as any).id}</span>
           <div className="flex">
-            {pokemonData.types.map((type: { type: { name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }; }, index: React.Key | null | undefined) => (
+            {pokemonData.types.map((type: { type: { name: string }; }, index: React.Key) => (
               <div
                 key={index}
                 className={`mr-2 px-2 py-1 text-white rounded ${getTypeColor(type.type.name)}`}>
@@ -46,9 +47,9 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
           </div>
         </div>
 
-        <div className="bg-gray-200 px-4 py-2 shadow-md">
+        <div className="bg-gray-100 px-4 py-2 shadow-md rounded">
           <h2 className="text-lg font-semibold mb-2">Stats</h2>
-          <div className="grid grid-cols-1 sd:w-96 md:w-96 md:grid-cols-2 lg:w-96 lg:rid-cols-2 xl:w-96 xl:grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 sd:w-96 md:w-96 md:grid-cols-2 lg:w-96 lg:rid-cols-2 xl:w-96 xl:grid-cols-2 gap-2">
             {pokemonData && (
               <>
                 <StatsBar statName="HP" statValue={pokemonData.stats[0].base_stat} />
@@ -62,7 +63,7 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
           </div>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-4 bg-gray-100 rounded shadow-md">
           <h3 className="text-lg font-semibold">Evolutions:</h3>
           <ul>
             {getEvolutions((evolutionChain as any)?.chain).map((evolution, index) => (
@@ -73,13 +74,12 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
             ))}
           </ul>
         </div>
-      
       </div>
+      
 
       <div className="overflow-y-auto">
-        <h3 className="text-lg font-semibold">Moves:</h3>
         <div className="grid grid-cols-1 gap-4">
-          {pokemonData.moves.map((move: { move: { name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }; }) => {
+          {pokemonData.moves.map((move: { move: { name: string}; }) => {
             return (
               <MoveComponent key={move.move.name as string} moveName={move.move.name as string} />
             );

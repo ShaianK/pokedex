@@ -1,6 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
 import names from '../assets/names.json';
-import { motion } from "framer-motion";
 import useSearchValue from '../hooks/useSearchValue';
 
 export default function SearchBar() {
@@ -11,7 +10,18 @@ export default function SearchBar() {
     return names.findIndex(name => name.toLowerCase() === pokemonName.toLowerCase());
   };
 
-  const filteredPokemon = names.filter(pokemon => pokemon.toLowerCase().includes(searchValue.toLowerCase()));
+  const defaultPokemon = [
+    'Pikachu', 'Charizard', 'Mewtwo', 'Eevee', 'Bulbasaur',
+    'Squirtle', 'Charmander', 'Gengar', 'Dragonite', 'Mew',
+    'Snorlax', 'Lucario', 'Gyarados', 'Sylveon', 'Greninja',
+    'Arcanine', 'Mimikyu', 'Vaporeon', 'Alakazam', 'Lugia',
+    'Machamp', 'Salamence'
+  ];
+  
+  const filteredPokemon = searchValue.trim() === '' ?
+    defaultPokemon :
+    names.filter(pokemon => pokemon.toLowerCase().includes(searchValue.toLowerCase()));
+  
 
   return (
     <>
@@ -26,18 +36,12 @@ export default function SearchBar() {
         />
 
         <Link to={`/pokemon/${searchValue}`}>
-          <motion.div
-            whileHover={{ rotate: 360, scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ duration: 0.2 }}
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg"
-              alt="Poke Ball"
-              className="text-red-500 cursor-pointer"
-              style={{ width: "24px", height: "24px", opacity: 0.8 }}
-            />
-          </motion.div>
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg"
+            alt="Poke Ball"
+            className="text-red-500 cursor-pointer transform hover:scale-110 hover:rotate-180 transition duration-200"
+            style={{ width: "24px", height: "24px", opacity: 0.8 }}
+          />
         </Link>
       </div>
 

@@ -9,7 +9,7 @@ const StatsBar = ({ statName, statValue }: { statName: string, statValue: number
             <motion.div
               className="h-full bg-green-500 rounded-lg"
               initial={{ width: "0%" }}
-              animate={{ width: `${statValue}%` }}
+              animate={{ width: `${(statValue/255*100)}%` }}
               transition={{ duration: 1 }}
             />
           </div>

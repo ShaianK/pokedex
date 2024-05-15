@@ -8,7 +8,7 @@ type MoveComponentProps = {
 };
 
 const MoveComponent: React.FC<MoveComponentProps> = ({ moveName }) => {
-  const [moveData, setMoveData] = useState<[string | null, number | null, number | null, string[]]>([null, null, null, []]);
+  const [moveData, setMoveData] = useState([null, null, null, []]);
 
   useEffect(() => {
     getMoveData(moveName).then((data : any) => {

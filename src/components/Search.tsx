@@ -45,7 +45,7 @@ export default function SearchBar() {
         {filteredPokemon.map((pokemon, index) => (
           <li key={index} onClick={() => navigate(`/pokemon/${pokemon.toLowerCase()}`)} className="flex cursor-pointer items-center justify-between py-2 hover:bg-slate-700 rounded-lg">
             <img
-              className="w-12 ml-1"
+              className="w-14 ml-1"
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonIndex(pokemon) + 1}.png`}
               alt={`Sprite of ${pokemon}`}
             />

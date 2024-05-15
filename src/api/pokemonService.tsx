@@ -1,8 +1,13 @@
 import axios from 'axios';
 
 export const getPokemonData = async (pokemonName: string) => {
-  const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-  return response.data;
+  try {
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+    return response.data;
+  } catch(error) {
+    console.error(error);
+    return "error";
+  }
 };
 
 export const getEvolutionChain = async (speciesUrl: string) => {
@@ -28,7 +33,13 @@ export const getMoveData = async (move : string) => {
 };
 
 export const fetchPokemonData = async (pokemonName : string) => {
-  const data = await getPokemonData(pokemonName);
-  const evolutionChainData = await getEvolutionChain(data.species.url);
-  return { pokemonData: data, evolutionChain: evolutionChainData };
+  try {
+    const data = await getPokemonData(pokemonName);
+    const evolutionChainData = await getEvolutionChain(data.species.url);
+    return { pokemonData: data, evolutionChain: evolutionChainData };
+  } catch (error) {
+    console.error(error);
+    return { pokemonData: "error", evolutionChain: "error" };
+  }
+  
 };

@@ -24,6 +24,10 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
     return <div className='flex h-full justify-center items-center'>Loading...</div>;
   }
 
+  if (pokemonData == "error" || evolutionChain == "error") {
+    return <div className='flex h-full justify-center items-center'>Pokemon not found!</div>;
+  }
+
   return (
     <div className="p-4 h-screen grid grid-cols-2 gap-4">
       <div className="flex flex-col items-center justify-center">

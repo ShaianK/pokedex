@@ -1,6 +1,6 @@
 # Pokedex
 
-A React-based web application that utilizes the PokeAPI to retrieve data on various Pokemon for users. Additionally, the project is able to identify Pokemon from provided images using TensorFlow.
+A React-based web application that utilizes the PokeAPI to retrieve data on various Pokemon for users. Additionally, it is able to identify Pokemon from provided images using TensorFlow.
 
 ## Features
 

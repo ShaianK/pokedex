@@ -7,11 +7,11 @@ export default function App() {
   const location = useLocation();
   
   return (
-    <div>
+    <>
       <Routes location={location} key={location.pathname}>
         <Route index element={<Home />} />
         <Route path="/pokemon/:pokemonId" element={<Pokemon />} />
       </Routes>
-    </div>
+    </>
   );
 }

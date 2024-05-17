@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// @ts-ignore
-import { getMoveData } from '../api/pokemonService'; // Import getMoveData function from pokemonService
+import { getMoveData } from '../api/pokemonService'; 
 import getTypeColor from '../utils/typeColors';
 
 type MoveComponentProps = {

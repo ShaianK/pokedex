@@ -6,9 +6,9 @@ export default function Pokemon() {
     const { pokemonId } = useParams();
     
     return (
-        <div>
+        <>
             <Navbar />
             <PokemonData pokemonName={pokemonId?.toLowerCase() || ''} />
-        </div>
+        </>
     )
 }

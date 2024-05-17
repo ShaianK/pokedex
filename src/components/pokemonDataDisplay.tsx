@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// @ts-ignore
-import { getPokemonData, getEvolutionChain, getMoveData, fetchPokemonData } from '../api/pokemonService'; 
+import { fetchPokemonData } from '../api/pokemonService'; 
 import MoveComponent from './MoveComponent';
 import getTypeColor from '../utils/typeColors';
 import StatsBar from './StatsBar';
@@ -30,15 +29,15 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
 
   return (
     <div className="p-4 h-screen grid grid-cols-2 gap-4">
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center">
         <img
-          className="w-64 h-64 object-contain"
+          className="max-w-72"
           src={(pokemonData as any).sprites.other['official-artwork'].front_default}
           alt={(pokemonData as any).name}
         />
-        {pokemonData && <h2 className="text-xl font-semibold">{pokemonData.name}</h2>}
+        <h2 className="text-xl font-semibold">{pokemonData.name}</h2>
 
-        <div className="flex mt-2">
+        <div className="flex my-2">
           <span className="mr-4">ID: {(pokemonData as any).id}</span>
           <div className="flex">
             {pokemonData.types.map((type: { type: { name: string }; }, index: React.Key) => (
@@ -54,7 +53,6 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
         <div className="bg-gray-100 px-4 py-2 shadow-md rounded">
           <h2 className="text-lg font-semibold mb-2">Stats</h2>
           <div className="grid grid-cols-2 sd:w-96 md:w-96 md:grid-cols-2 lg:w-96 lg:rid-cols-2 xl:w-96 xl:grid-cols-2 gap-2">
-            {pokemonData && (
               <>
                 <StatsBar statName="HP" statValue={pokemonData.stats[0].base_stat} />
                 <StatsBar statName="Attack" statValue={pokemonData.stats[1].base_stat} />
@@ -63,7 +61,6 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
                 <StatsBar statName="Special Attack" statValue={pokemonData.stats[3].base_stat} />
                 <StatsBar statName="Special Defense" statValue={pokemonData.stats[4].base_stat} />
               </>
-            )}
           </div>
         </div>
 
@@ -81,7 +78,7 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
       </div>
       
 
-      <div className="overflow-y-auto">
+      <div className="overflow-y-auto h-[95%] w-[95%]">
         <div className="grid grid-cols-1 gap-4">
           {pokemonData.moves.map((move: { move: { name: string}; }) => {
             return (

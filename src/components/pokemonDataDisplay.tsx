@@ -28,10 +28,10 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
   }
 
   return (
-    <div className="p-4 h-screen grid grid-cols-2 gap-4">
-      <div className="flex flex-col items-center">
+    <div className="p-4 h-[55rem] grid grid-cols-2 gap-4">
+      <div className="flex flex-col items-center h-[90%]">
         <img
-          className="max-w-72"
+          className="max-w-72 mt-12"
           src={(pokemonData as any).sprites.other['official-artwork'].front_default}
           alt={(pokemonData as any).name}
         />
@@ -78,8 +78,8 @@ const PokemonDataDisplay = ({ pokemonName }: { pokemonName: string }) => {
       </div>
       
 
-      <div className="overflow-y-auto h-[95%] w-[95%]">
-        <div className="grid grid-cols-1 gap-4">
+      <div className="overflow-y-auto h-[100%] w-[95%]">
+        <div className="flex flex-col gap-4">
           {pokemonData.moves.map((move: { move: { name: string}; }) => {
             return (
               <MoveComponent key={move.move.name as string} moveName={move.move.name as string} />

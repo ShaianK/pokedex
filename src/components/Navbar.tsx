@@ -5,8 +5,8 @@ export default function Navbar() {
   const { searchValue, setSearchValue, handleKeyDown } = useSearchValue();
 
   return (
-    <nav className="bg-gray-800 sticky top-0">
-      <div className="max-w-full mx-auto px-1 sm:px-2 lg:px-4">
+    <nav className="bg-gray-800">
+      <div className="max-w-full mx-auto px-4 sm:px-4 lg:px-4">
         <div className="flex items-center justify-left h-16">
           <div className="flex items-center">
             <h1 className="text-white text-3xl">Pokedex</h1>

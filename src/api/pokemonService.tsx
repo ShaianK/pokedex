@@ -41,5 +41,14 @@ export const fetchPokemonData = async (pokemonName : string) => {
     console.error(error);
     return { pokemonData: "error", evolutionChain: "error" };
   }
-  
 };
+
+export const imgToPokemon = async (file: File) => {
+  try {
+    const res = await axios.post('http://localhost:8000/predict', file);
+    console.log(res);
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+} 

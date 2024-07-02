@@ -4,7 +4,23 @@ from io import BytesIO
 from PIL import Image
 from typing import Tuple
 import tensorflow as tf
+
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+
+origins = [
+    "http://localhost:5173/whosthatpokemon",
+    "http://localhost:5173/"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load the trained model
 MODEL = tf.keras.models.load_model("my_model.keras")

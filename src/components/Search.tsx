@@ -58,11 +58,6 @@ export default function SearchBar() {
           </li>
         ))}
       </div>
-      <div className="mt-2 w-full flex justify-center items-center">
-        <Link to={`/whosthatpokemon`}>
-          <p className='hover:drop-shadow-md'>Who's that Pokemon?</p>
-        </Link>
-      </div>
     </>
   );
 }

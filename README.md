@@ -10,10 +10,10 @@ A React-based web application that utilizes the PokeAPI to retrieve data on vari
   <img src="https://github.com/ShaianK/README_TEST/blob/main/media/pokedex_demo.gif" alt="Pokedex Demo GIF">
 </div>
 
-- Pokemon Data Display: View detailed information about any Pokemon, including its base stats, moves, and evolution chain.
-- Search Bar: Search for specific Pokemon by name or ID.
-- TensorFlow Integration: Utilizes TensorFlow for real-time Pokemon identification.
-- FastAPI Backend: Backend service built with FastAPI to support the TensorFlow integration.
+- View detailed information about any Pokemon, including its base stats, moves, and evolution chain.
+- Search for specific Pokemon by name or their ID.
+- Utilizes TensorFlow for Pokemon identification by image.
+- Backend built with FastAPI to support the TensorFlow integration.
 
 ## Installation
 

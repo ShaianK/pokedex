@@ -7,7 +7,7 @@ A React-based web application that utilizes the PokeAPI to retrieve data on vari
 ## Overview
 
 <div align="center">
-  <img src="https://github.com/ShaianK/README_TEST/blob/main/media/pokedex_demo.gif" alt="Pokedex Demo GIF">
+  <img src="https://github.com/ShaianK/pokedex/blob/main/media/pokedex_demo.gif" alt="Pokedex Demo GIF">
 </div>
 
 - View detailed information about any Pokemon, including its base stats, moves, and evolution chain.

@@ -1,8 +1,14 @@
-# Pokedex
+<div align="center">
+  <h1>Pokedex</h1>
+</div>
 
 A React-based web application that utilizes the PokeAPI to retrieve data on various Pokemon for users. Additionally, it is able to identify Pokemon from provided images using TensorFlow.
 
-## Features
+## Overview
+
+<div align="center">
+  <img src="https://github.com/ShaianK/README_TEST/blob/main/media/pokedex_demo.gif" alt="Pokedex Demo GIF">
+</div>
 
 - Pokemon Data Display: View detailed information about any Pokemon, including its base stats, moves, and evolution chain.
 - Search Bar: Search for specific Pokemon by name or ID.

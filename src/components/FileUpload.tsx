@@ -1,8 +1,11 @@
+import { Link, useNavigate } from 'react-router-dom';
 import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios';
 
 const FileUpload = () => {
+  const navigate = useNavigate();
+
   const onDrop = useCallback((acceptedFiles : any) => {
     const file = acceptedFiles[0];
     const formData = new FormData();
@@ -15,6 +18,7 @@ const FileUpload = () => {
     })
     .then(response => {
       console.log('File uploaded successfully', response.data);
+      navigate(`/pokemon/${response.data.class}`);
     })
     .catch(error => {
       console.error('Error uploading file', error);
